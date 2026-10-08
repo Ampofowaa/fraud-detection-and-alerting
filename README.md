@@ -2,7 +2,7 @@
 
 **Business question:** a fraud operations team can only review a limited number of transactions each day. *Which transactions should it review to minimise fraud losses plus review costs, and how will it know when the model needs retraining?*
 
-**Live dashboard:** *(link added after deployment)*
+**Live dashboard:** [fraud-alerting-dashboard.streamlit.app](https://fraud-alerting-dashboard.streamlit.app/), interactive alert-threshold and monitoring dashboard for a fraud team
 
 ## Headline results
 
