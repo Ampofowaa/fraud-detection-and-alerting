@@ -1,0 +1,5 @@
+# Lightweight dependencies for CI: tests and linting (no LightGBM or Kaggle data needed)
+-r dashboard/requirements.txt
+numpy==2.5.0
+pytest==9.1.1
+ruff==0.16.6

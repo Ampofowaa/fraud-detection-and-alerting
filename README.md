@@ -1,5 +1,7 @@
 # Fraud Detection: From Anomaly Detection to Cost-Optimal Alerting
 
+[![CI](https://github.com/Ampofowaa/fraud-detection-and-alerting/actions/workflows/ci.yml/badge.svg)](https://github.com/Ampofowaa/fraud-detection-and-alerting/actions/workflows/ci.yml)
+
 **Business question:** a fraud operations team can only review a limited number of transactions each day. *Which transactions should it review to minimise fraud losses plus review costs, and how will it know when the model needs retraining?*
 
 **Live dashboard:** [fraud-alerting-dashboard.streamlit.app](https://fraud-alerting-dashboard.streamlit.app/), interactive alert-threshold and monitoring dashboard for a fraud team
@@ -44,6 +46,15 @@ Testing Part 1's conclusions on 590,540 real transactions × 434 features:
 pip install -r dashboard/requirements.txt
 streamlit run dashboard/app.py
 ```
+
+## Tests and CI
+The logic that would be costly to get wrong lives in the `fraud/` package, which the notebook imports, and is unit-tested in `tests/`:
+- **No leakage** (`test_features.py`): a transaction never contributes to its own features, adding *future* transactions never changes *earlier* rows' features, and results match a brute-force calculation.
+- **Drift monitoring** (`test_monitoring.py`): PSI is ~0 for identical distributions and above 0.25 for shifted ones, handles missing values and categories.
+- **Alert costs** (`test_costs.py`): cost arithmetic is correct, and a higher review cost never produces more alerts.
+- **Dashboard** (`test_dashboard.py`): the app runs on the committed results for every control setting.
+
+GitHub Actions runs `ruff` and `pytest` on every push. Locally: `pip install -r requirements-dev.txt && pytest`.
 
 ## Reproducing
 1. Join the [IEEE-CIS Fraud Detection](https://www.kaggle.com/competitions/ieee-fraud-detection) competition on Kaggle and download `train_transaction.csv` and `train_identity.csv` into `data/`.

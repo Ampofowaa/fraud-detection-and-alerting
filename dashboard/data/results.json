@@ -2155,7 +2155,7 @@
    "ROC-AUC": 0.902099299896141
   }
  },
- "test_ap_ci": "0.526\u20130.561",
+ "test_ap_ci": "0.526-0.561",
  "pr_curves": {
   "Logistic regression": {
    "recall": [
@@ -3531,7 +3531,7 @@
   "naive memory (GB)": 2.080582559,
   "naive load time (s)": 31.401362895965576,
   "optimised load time (s)": 33.291157960891724,
-  "load time from Parquet (s)": 1.9744892120361328,
+  "load time from Parquet (s)": 2.0080015659332275,
   "Parquet file size (GB)": 0.084059494,
   "optimised memory (GB)": 0.970398267,
   "memory reduction (%)": 53.35930012474934
