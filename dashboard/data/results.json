@@ -3531,7 +3531,7 @@
   "naive memory (GB)": 2.080582559,
   "naive load time (s)": 31.401362895965576,
   "optimised load time (s)": 33.291157960891724,
-  "load time from Parquet (s)": 2.0080015659332275,
+  "load time from Parquet (s)": 5.161005258560181,
   "Parquet file size (GB)": 0.084059494,
   "optimised memory (GB)": 0.970398267,
   "memory reduction (%)": 53.35930012474934
