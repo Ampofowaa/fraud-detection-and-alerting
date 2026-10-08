@@ -1,0 +1,16 @@
+# Environment and tool caches
+venv/
+.venv/
+__pycache__/
+.ipynb_checkpoints/
+.mypy_cache/
+.ruff_cache/
+
+# Data (too large for GitHub; see README for how to get or regenerate it)
+/data/
+anomaly.csv
+*.parquet
+*.csv
+
+# Private application notes
+PLAN.md
